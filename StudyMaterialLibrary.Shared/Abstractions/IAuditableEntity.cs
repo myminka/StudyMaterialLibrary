@@ -1,4 +1,4 @@
-﻿namespace StudyMaterialLibrary.Shared.Abstractions;
+﻿namespace StudyLibrary.Shared.Abstractions;
 
 public interface IAuditableEntity : IPortalEntity
 {
