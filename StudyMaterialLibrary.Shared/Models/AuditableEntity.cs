@@ -1,6 +1,6 @@
-﻿using StudyMaterialLibrary.Shared.Abstractions;
+﻿using StudyLibrary.Shared.Abstractions;
 
-namespace StudyMaterialLibrary.Shared.Models;
+namespace StudyLibrary.Shared.Models;
 
 public class AuditableEntity : IAuditableEntity
 {
