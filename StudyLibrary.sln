@@ -3,11 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.5.33424.131
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "StudyLibrary", "StudyMaterialLibrary\StudyLibrary.csproj", "{08C09651-169A-4A28-8E55-78262850E6F0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "StudyLibrary.Api", "StudyMaterialLibrary\StudyLibrary.Api.csproj", "{08C09651-169A-4A28-8E55-78262850E6F0}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "StudyLibrary.BLL", "StudyMaterialLibrary.BLL\StudyLibrary.BLL.csproj", "{4EB05320-EE15-492E-8512-FD480A191D4F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "StudyLibrary.Application", "StudyMaterialLibrary.BLL\StudyLibrary.Application.csproj", "{4EB05320-EE15-492E-8512-FD480A191D4F}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "StudyLibrary.DAL", "StudyMaterialLibrary.DAL\StudyLibrary.DAL.csproj", "{88544CBF-7263-46AC-8080-89BC9737A5B2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "StudyLibrary.DataAccess", "StudyMaterialLibrary.DAL\StudyLibrary.DataAccess.csproj", "{88544CBF-7263-46AC-8080-89BC9737A5B2}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "StudyLibrary.Entities", "StudyMaterialLibrary.Entities\StudyLibrary.Entities.csproj", "{0ABC3878-22BC-4DD0-A2D6-CE1DB38E52D6}"
 EndProject

@@ -1,6 +1,6 @@
 ﻿using StudyLibrary.Entities;
 
-namespace StudyLibrary.DAL.Abstractions.Providers;
+namespace StudyLibrary.DataAccess.Abstractions.Providers;
 
 public interface IUserProvider
 {

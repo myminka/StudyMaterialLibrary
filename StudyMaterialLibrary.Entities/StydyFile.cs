@@ -3,7 +3,7 @@ using StudyLibrary.Shared.Models;
 
 namespace StudyLibrary.Entities;
 
-public class File : AuditableEntity
+public class StydyFile : AuditableEntity
 {
     public Guid FileId { get; set; }
     public string Name { get; set; }

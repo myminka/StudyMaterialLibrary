@@ -1,7 +1,7 @@
-﻿using StudyLibrary.DAL.Abstractions.Providers;
+﻿using StudyLibrary.DataAccess.Abstractions.Providers;
 using StudyLibrary.Entities;
 
-namespace StudyLibrary.DAL.Providers;
+namespace StudyLibrary.DataAccess.Providers;
 
 public class UserProvider : IUserProvider
 {
