@@ -36,7 +36,7 @@ namespace StudyLibrary.DataAccess.Abstractions.Repositories
 
         public async Task<IEnumerable<StudyMaterial>> GetAllMaterialsAsync()
         {
-            return await _context.StudyMaterials.ToListAsync();
+            return await _context.StudyMaterials.AsNoTracking().ToListAsync();
         }
 
         public async Task<StudyMaterial> GetMaterialByIdAsync(int id)
