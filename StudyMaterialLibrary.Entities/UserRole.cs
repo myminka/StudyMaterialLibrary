@@ -5,6 +5,6 @@ namespace StudyLibrary.Entities;
 
 public class UserRole : IdentityUserRole<int>
 {
-    public User User { get; set; }
+    //public User User { get; set; }
     public RoleType Role { get; set; }
 }
