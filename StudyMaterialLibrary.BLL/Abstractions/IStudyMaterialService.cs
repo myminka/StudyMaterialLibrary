@@ -5,9 +5,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace StudyLibrary.DataAccess.Abstractions.Providers
+namespace StudyLibrary.Application.Abstractions
 {
-    public interface IStudyMaterialProvider
+    public interface IStudyMaterialService
     {
         Task<StudyMaterial> GetMaterialByIdAsync(int id);
         Task<IEnumerable<StudyMaterial>> GetMaterialsBySubjectIdAsync(int subjectId);
