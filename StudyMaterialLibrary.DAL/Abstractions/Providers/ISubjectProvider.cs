@@ -9,7 +9,7 @@ namespace StudyLibrary.DataAccess.Abstractions.Providers
 {
     public interface ISubjectProvider
     {
-        Task<Subject> GetSubjcetByIdAsync(int id);
+        Task<Subject> GetSubjectByIdAsync(int id);
         Task<IEnumerable<Subject>> GetAllSubjectAsync();
         Task AddSubjectAsync(Subject subject);
         Task DeleteSubjectAsync(int id);

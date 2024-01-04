@@ -39,7 +39,7 @@ namespace StudyLibrary.DataAccess.Abstractions.Repositories
             return await _context.Subjects.AsNoTracking().ToListAsync();            
         }
 
-        public async Task<Subject> GetSubjcetByIdAsync(int id)
+        public async Task<Subject> GetSubjectByIdAsync(int id)
         {
             return await _context.Subjects.FindAsync(id);
         }
