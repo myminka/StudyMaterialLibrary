@@ -11,5 +11,5 @@ public class StudyMaterial : AuditableEntity
     public ICollection<User> Authors { get; set; }
     public Subject Subject { get; set; }
     public int SubjectId { get; set; }
-    public StydyFile File { get; set; }
+    public StudyFile File { get; set; }
 }
