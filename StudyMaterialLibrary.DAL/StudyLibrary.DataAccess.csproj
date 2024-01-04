@@ -27,7 +27,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Abstractions\Repositories\" />
     <Folder Include="Extensions\" />
     <Folder Include="Repositories\" />
   </ItemGroup>
