@@ -3,7 +3,7 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using StudyLibrary.DataAccess.EntitiesConfigurations;
 using StudyLibrary.Entities;
-using System.Data;
+
 namespace StudyLibrary.DataAccess;
 
 public class StudyContext : IdentityDbContext<User, Role, int, IdentityUserClaim<int>, UserRole, IdentityUserLogin<int>, IdentityRoleClaim<int>, IdentityUserToken<int>>
@@ -12,7 +12,7 @@ public class StudyContext : IdentityDbContext<User, Role, int, IdentityUserClaim
     public DbSet<UserRole> UserRoles { get; set; }
     public DbSet<Subject> Subjects { get; set; }
     public DbSet<StudyMaterial> StudyMaterials { get; set; }
-    public DbSet<StydyFile> Files { get; set; }
+    public DbSet<StudyFile> Files { get; set; }
 
     public StudyContext(DbContextOptions options)
         : base(options)
@@ -22,6 +22,7 @@ public class StudyContext : IdentityDbContext<User, Role, int, IdentityUserClaim
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
-        modelBuilder.ApplyConfigurationsFromAssembly(typeof(StudyMaterialConfiguration).Assembly);
+        base.OnModelCreating(modelBuilder);
+        //modelBuilder.ApplyConfigurationsFromAssembly(typeof(StudyMaterialConfiguration).Assembly);
     }
 }

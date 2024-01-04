@@ -4,10 +4,10 @@ namespace StudyLibrary.Entities;
 
 public class Role : IdentityRole<int>
 {
-    public Role()
+    /*public Role()
     {
         UserRoles = new List<UserRole>();
     }
 
-    public ICollection<UserRole> UserRoles { get; set; }
+    public ICollection<UserRole> UserRoles { get; set; }*/
 }
