@@ -1,6 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using StudyLibrary.Application.Abstractions;
-using StudyLibrary.Entities;
+using StudyLibrary.Application.ViewModels.User;
 
 namespace StudyLibrary.Api.Controllers;
 
@@ -17,7 +17,7 @@ public class UserController : ControllerBase
     [HttpGet("{id}")]
     public IActionResult GetUserById(int id)
     {
-        var user = _userService.GetUserById(id);
+        var user = _userService.GetUserByIdAsync(id);
         if (user == null)
         {
             return NotFound();
@@ -28,7 +28,7 @@ public class UserController : ControllerBase
     [HttpGet]
     public IActionResult GetAllUsers()
     {
-        var users = _userService.GetAllUsers();
+        var users = _userService.GetUsersAsync();
         if(users == null)
         {
             return NotFound();
@@ -37,13 +37,13 @@ public class UserController : ControllerBase
     }
 
     [HttpPost]
-    public IActionResult AddUser(User newUser)
+    public IActionResult AddUser(AddUserViewModel newUser)
     {
         if(newUser == null)
         {
             return BadRequest("Invalid User");
         }
-        var addedUser = _userService.AddUser(newUser);
+        var addedUser = _userService.AddUserAsync(newUser);
         var routeValues = new { id = addedUser.Id };
         return CreatedAtAction(nameof(GetUserById), routeValues, addedUser); 
     }

@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using StudyLibrary.Application.Abstractions;
 using StudyLibrary.Entities;
 
 namespace StudyLibrary.Api.Controllers;
@@ -17,7 +18,7 @@ public class StudyMaterialController : Controller
     [HttpGet("{id}")]
     public IActionResult GetStudyMaterialById(int id)
     {
-        var studyMaterial = _studyMaterialService.GetStudyMaterialById(id);
+        var studyMaterial = _studyMaterialService.GetMaterialByIdAsync(id);
         if(studyMaterial == null)
         {
             return NotFound();
@@ -28,7 +29,18 @@ public class StudyMaterialController : Controller
     [HttpGet]
     public IActionResult GetAllStudyMaterials()
     {
-        var studyMaterials = _studyMaterialService.GetAllStudyMaterials();
+        var studyMaterials = _studyMaterialService.GetAllMaterialsAsync();
+        if (studyMaterials == null)
+        {
+            return NotFound();
+        }
+        return Ok(studyMaterials);
+    }
+
+    [HttpGet]
+    public IActionResult GetMaterialsBySubjectId(int subjectId)
+    {
+        var studyMaterials = _studyMaterialService.GetMaterialsBySubjectIdAsync(subjectId);
         if (studyMaterials == null)
         {
             return NotFound();
@@ -43,8 +55,32 @@ public class StudyMaterialController : Controller
         {
             return BadRequest("Invalid material");
         }
-        var addedMaterial = _studyMaterialService.AddStudyMaterial(newStudyMaterial);
+        var addedMaterial = _studyMaterialService.AddMaterialAsync(newStudyMaterial);
         var routeValues = new { id = newStudyMaterial.Id };
         return CreatedAtAction(nameof(GetStudyMaterialById), routeValues, addedMaterial);
+    }
+
+    [HttpPut("{id}")]
+    public IActionResult UpdateStudyMaterial(StudyMaterial studyMaterial)
+    {
+        var material = _studyMaterialService.GetMaterialByIdAsync(studyMaterial.Id);
+        if (material == null)
+        {
+            return NotFound();
+        }
+        var updatedMaterial = _studyMaterialService.UpdateMaterialAsync(studyMaterial);
+        return Ok(updatedMaterial);
+    }
+
+    [HttpDelete("{id}")]
+    public IActionResult DeleteStudyMaterial(StudyMaterial newStudyMaterial)
+    {
+        var material = _studyMaterialService.GetMaterialByIdAsync(newStudyMaterial.Id);
+        if(material == null)
+        {
+            return NotFound();
+        }
+        _studyMaterialService.DeleteMaterialAsync(material.Id);
+        return NoContent();
     }
 }
