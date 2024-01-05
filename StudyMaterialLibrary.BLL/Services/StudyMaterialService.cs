@@ -2,7 +2,6 @@
 using StudyLibrary.DataAccess.Abstractions.Providers;
 using StudyLibrary.Entities;
 
-
 namespace StudyLibrary.Application.Services
 {
     public class StudyMaterialService : IStudyMaterialService
