@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace StudyLibrary.Application.Services
 {
-    internal class SubjectService : ISubjectService
+    public class SubjectService : ISubjectService
     {
         private readonly ISubjectProvider _provider;
 
@@ -33,9 +33,9 @@ namespace StudyLibrary.Application.Services
             return await _provider.GetAllSubjectAsync();
         }
 
-        public async Task<Subject> GetSubjcetByIdAsync(int id)
+        public async Task<Subject> GetSubjectByIdAsync(int id)
         {
-            return await _provider.GetSubjcetByIdAsync(id);
+            return await _provider.GetSubjectByIdAsync(id);
         }
 
         public async Task UpdateSubjectAsync(Subject subject)
