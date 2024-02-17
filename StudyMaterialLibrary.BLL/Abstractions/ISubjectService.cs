@@ -7,9 +7,9 @@ using System.Threading.Tasks;
 
 namespace StudyLibrary.Application.Abstractions
 {
-    internal interface ISubjectService
+    public interface ISubjectService
     {
-        Task<Subject> GetSubjcetByIdAsync(int id);
+        Task<Subject> GetSubjectByIdAsync(int id);
         Task<IEnumerable<Subject>> GetAllSubjectAsync();
         Task AddSubjectAsync(Subject subject);
         Task DeleteSubjectAsync(int id);
